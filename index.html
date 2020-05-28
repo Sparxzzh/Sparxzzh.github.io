@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Sp1ke&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Sp1ke&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Sp1ke">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Sp1ke's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sp1ke's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/23/Github%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/23/Github%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="post-title-link" itemprop="url">Github面试准备</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-23 09:58:01" itemprop="dateCreated datePublished" datetime="2020-05-23T09:58:01+08:00">2020-05-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-25 14:33:57" itemprop="dateModified" datetime="2020-05-25T14:33:57+08:00">2020-05-25</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="data-may-22-复习时间-june-1-操作系统"><a href="#data-may-22-复习时间-june-1-操作系统" class="headerlink" title="data: may 22 复习时间 june 1(操作系统)"></a>data: may 22 复习时间 june 1(操作系统)</h2><h3 id="1-并发与并行-start"><a href="#1-并发与并行-start" class="headerlink" title="1.并发与并行 start"></a>1.并发与并行 start</h3><hr>
+<p>前者争对同时多程序，需硬件支持，后者为同时间多指令运行，操作系统提供进程和线程支持并行。    </p>
+<ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E6%A6%82%E8%BF%B0.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E6%A6%82%E8%BF%B0.md</a><h3 id="2-进程与线程-区别3-end"><a href="#2-进程与线程-区别3-end" class="headerlink" title="2.  进程与线程 区别3 end"></a>2.  进程与线程 区别3 end</h3></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86.md</a>  <h2 id="data-may-23-复习时间-june-2-数据库"><a href="#data-may-23-复习时间-june-2-数据库" class="headerlink" title="data:may 23 复习时间 june 2  (数据库)"></a>data:may 23 复习时间 june 2  (数据库)</h2><h3 id="1-事务"><a href="#1-事务" class="headerlink" title="1.事务"></a>1.事务</h3>ACID  其中C为consistency  <h3 id="2-并发一致性问题"><a href="#2-并发一致性问题" class="headerlink" title="2.并发一致性问题"></a>2.并发一致性问题</h3></li>
+<li><em>c问题:*</em> </li>
+</ul>
+<ul>
+<li>丢失修改（修改被覆盖）;  </li>
+<li>读脏数据（数据回滚）;  </li>
+<li>不可重复读（二次读取数据被修改）;  </li>
+<li>幻影读； </li>
+</ul>
+<p><strong>解决：</strong>  </p>
+<p>对应加锁处理:</p>
+<ul>
+<li>一级封锁：加x锁直到事物结束；  </li>
+<li>二级封锁：在一级基础上对对象加s锁限制为只读；  </li>
+<li>三级封锁：加s锁直到事物结束，其他事物才能加x锁；  <h3 id="两段锁协议"><a href="#两段锁协议" class="headerlink" title="两段锁协议"></a>两段锁协议</h3></li>
+<li>加锁和解锁分阶段，为可串行调度的充分不必要条件</li>
+<li>可串行调度可不遵循两段锁协议</li>
+</ul>
+<h2 id="data-may-24-复习时间-june-3-java基础、计算机网络"><a href="#data-may-24-复习时间-june-3-java基础、计算机网络" class="headerlink" title="data:may 24 复习时间 june 3(java基础、计算机网络)"></a>data:may 24 复习时间 june 3(java基础、计算机网络)</h2><h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3><ul>
+<li><p>复习时补充笔记</p>
+<h3 id="2-String"><a href="#2-String" class="headerlink" title="2.String"></a>2.String</h3></li>
+<li><p>复习补充</p>
+<h3 id="3-运算"><a href="#3-运算" class="headerlink" title="3.运算"></a>3.运算</h3></li>
+<li><p>复习补充</p>
+<h3 id="4-关键字"><a href="#4-关键字" class="headerlink" title="4.关键字"></a>4.关键字</h3></li>
+<li><p>final:数据(注意不可改引用对象，可改值)；方法(不能重写)；类(不能继承)</p>
+</li>
+<li><p>static:静态方法只能访问静态字段和其他静态方法。<br>静态内部类可直接创建对象，非静态内部类需外部类先创建实例来支持其创建对象。初始化代码顺序优先级高。</p>
+</li>
+<li><p><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%9F%BA%E7%A1%80.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%9F%BA%E7%A1%80.md</a></p>
+<h3 id="5-分组交换"><a href="#5-分组交换" class="headerlink" title="5.分组交换"></a>5.分组交换</h3></li>
+<li><p>分组包含源地址和目标地址  (类似邮局)；</p>
+<h3 id="6-网络体系结构"><a href="#6-网络体系结构" class="headerlink" title="6.网络体系结构"></a>6.网络体系结构</h3></li>
+</ul>
+<p><strong>五层协议:</strong></p>
+<ul>
+<li>应用层：http dns协议，处理应用数据，报文作单位</li>
+<li>传输层:to 进程,定义传统协议可支持不断增多的协议。报文段为单位的面向连接的tcp提供完整可靠的数据传输服务。udp无连接，用户数据报，及时性服务。</li>
+<li>网络层：to 主机进程,封装报文段或用户数据包为分组。</li>
+<li>数据链路层：封装分组为帧，提供同链路主机间传输服务。</li>
+<li>物理层:解决不同传输媒体的通信手段差异性问题，保证数据链路层感受不到差异。  </li>
+</ul>
+<p><strong>OSI</strong></p>
+<ul>
+<li>表示层:主机间数据格式问题 数据加密压缩描述。</li>
+<li>会话层：建议管理会话。  </li>
+</ul>
+<p><strong>TCP/IP</strong></p>
+<ul>
+<li>合并数据链路和物理层为网络接口层，不严格遵守OSI<h3 id="7-数据传递过程"><a href="#7-数据传递过程" class="headerlink" title="7.数据传递过程"></a>7.数据传递过程</h3></li>
+<li>向下传要不断添加下层协议首尾部，向下要不断拆<h2 id="data-may-25-复习时间-june-3-java基础"><a href="#data-may-25-复习时间-june-3-java基础" class="headerlink" title="data:may 25 复习时间 june 3(java基础)"></a>data:may 25 复习时间 june 3(java基础)</h2></li>
+</ul>
+<p><strong>Object通用方法：</strong>  </p>
+<h3 id="1-equals"><a href="#1-equals" class="headerlink" title="1.equals()"></a>1.equals()</h3><ul>
+<li>满足自等传递一致对称</li>
+<li>与 == 区别在于，equals实现判断对象引用的值域是否相等，前者判断引用对象是否相等 前为后的充分不必要<h3 id="2-hashcode"><a href="#2-hashcode" class="headerlink" title="2.hashcode()"></a>2.hashcode()</h3></li>
+<li>计算哈希值，覆盖equals()可实现哈希值相等，存储在hashset中的对象也一致</li>
+<li>保证均匀分布，考虑各值域表示为R进制数，并计算，为保证不乘法溢出,R选用奇素数31<h3 id="3-toString"><a href="#3-toString" class="headerlink" title="3.toString()"></a>3.toString()</h3></li>
+<li>对象调用一般返回  ToStringExample@4554617c这种形式的无符号散列码<h3 id="4-clone"><a href="#4-clone" class="headerlink" title="4.clone()"></a>4.clone()</h3></li>
+<li>protect类型，其他类调用时需显示重写该方法，并实现cloneable接口规定，否则抛出异常。</li>
+<li>浅拷贝：拷贝对象和原对象的引用类型引用相同对象。</li>
+<li>深拷贝:重写clone方法时，在方法内创建了一个新的对象引用并实现自定义拷贝(如数组)，拷贝对象引用类型引用的是一个新对象。  </li>
+</ul>
+<p>最好不要用clone而改为自定义cloneConstructor的拷贝构造函数或拷贝方法避免复杂的异常处理</p>
+<ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%9F%BA%E7%A1%80.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%9F%BA%E7%A1%80.md</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E6%8E%92%E5%BA%8F%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/04/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E6%8E%92%E5%BA%8F%E7%AF%87/" class="post-title-link" itemprop="url">leetcode-刷题笔记-排序篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-04 12:39:56" itemprop="dateCreated datePublished" datetime="2020-05-04T12:39:56+08:00">2020-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-25 15:39:43" itemprop="dateModified" datetime="2020-05-25T15:39:43+08:00">2020-05-25</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-kthElement-215"><a href="#1-kthElement-215" class="headerlink" title="1.kthElement 215"></a>1.kthElement 215</h2><h3 id="1-直接排序-easy"><a href="#1-直接排序-easy" class="headerlink" title="1).直接排序 easy"></a>1).直接排序 easy</h3><h3 id="2-堆排序"><a href="#2-堆排序" class="headerlink" title="2).堆排序"></a>2).堆排序</h3><h3 id="3-快速选择"><a href="#3-快速选择" class="headerlink" title="3).快速选择"></a>3).快速选择</h3><hr>
+<p>堆概念  二叉树结构变式， 堆是计算机科学中的一种特别的树状数据结构。若是满足以下特性，即可称为堆：“给定堆中任意节点P和C，若P是C的母节点，那么P的值会小于等于C的值”。若母节点的值恒小于等于子节点的值，此堆称为最小堆；反之，若母节点的值恒大于等于子节点的值，此堆称为最大堆。在堆中最顶端的那一个节点，称作根节点，根节点本身没有母节点。详情见 reference：  </p>
+<ul>
+<li><a href="https://www.jianshu.com/p/6b526aa481b1" target="_blank" rel="noopener">https://www.jianshu.com/p/6b526aa481b1</a>  </li>
+<li><a href="https://www.jianshu.com/p/878f93d80714" target="_blank" rel="noopener">https://www.jianshu.com/p/878f93d80714</a></li>
+</ul>
+<h4 id="1-堆排序"><a href="#1-堆排序" class="headerlink" title="1.堆排序"></a>1.堆排序</h4><hr>
+<p>ab:最大元素k 利用堆性质 维护k大小的最小堆 返回峰值极为第k个最大元素</p>
+<p>f&amp;q:优先队列堆的模板类初始化， pq.poll()保留堆性质去掉最大值, pq.peak()取峰值</p>
+<h4 id="2-快速选择"><a href="#2-快速选择" class="headerlink" title="2.快速选择"></a>2.快速选择</h4><hr>
+<p>ab:<br>1.快速选择算法，基元素选择(可随机，这里选第一项)，划分。<br>2.循环确定基元素，本题判断减少划分区间缩小范围判断k位置正确的基元素值<br>3.数组语法 nums.lengh 区别字符串的 string.length()<br>4.注意点：基元素值变化而不是位置变化，return值注意，while(true){while();while();}来筛选需要交换的位置<br>f&amp;q:利用快速选择的性质解决排序查找问题，由于其快速选择的黑盒性质(确定基元素即可，不考虑划分的排序情况)有o(n)的时间复杂度,首先k转换为正数，引入左右端点符号，用position函数获取基位置(输入划分区间端点为参数)与k判断，减小划分直到匹配到正确的基位置，position函数注意最后将选择的第一个位置基放入正确的位置（i&gt;=j时）</p>
+<h2 id="2-Topk-Frequent-Elements-347"><a href="#2-Topk-Frequent-Elements-347" class="headerlink" title="2.Topk Frequent Elements 347"></a>2.Topk Frequent Elements 347</h2><p>桶排序解决：</p>
+<p>ab:频率统计问题，寻找k元素问题（带频率性质），带键值对的排序，需要考虑元素key值（本题的频率）相同情况下的排序，map的使用以及映射赋值，桶的使用和赋值，这两种特殊数据结构的for循环遍历，存入键值对的列表桶的边界值判断和列表的子列表取值语法</p>
+<p>f&amp;q:确定为排序选择问题，而且是键值对排序选择，选用map做键值映射后再分配列表桶来进行键值对排序排序完后做倒序判断存入结果列表  </p>
+<h2 id="3-Sort-Characters-By-Frequency-415"><a href="#3-Sort-Characters-By-Frequency-415" class="headerlink" title="3. Sort Characters By Frequency 415"></a>3. Sort Characters By Frequency 415</h2><p>ab:按频率排序问题，键值对hashmap统计频率问题，字符列表类型桶排序，hashmap的快速put方法，<br>(getOrDefalult(c,0)+1)，使用了StringBuilder加append的方法动态改变字符串，最后toString转换返回结果字符串<br>f&amp;q:老套路map统计频率桶排序频率，存入各频率下的字符，最后按照频率循环append各个字符。</p>
+<h2 id="4-荷兰国旗问题-Sort-Color-75"><a href="#4-荷兰国旗问题-Sort-Color-75" class="headerlink" title="4.荷兰国旗问题 Sort Color 75"></a>4.荷兰国旗问题 Sort Color 75</h2><p>ab:分组排序，原地交换排序，三指针控制，中间指控制交换确保0全部前方2全部后方<br>f&amp;q：原地多指针分组排序主要注意指针的前进后退，这里不确定循环次数，选用while循环，边界条件为第一个判断为0要自己交换一次，所以a指针要从-1开始，而。应为判断过前面后能保证都为1交换后不用考虑1，中间指针自增即可，而对于判断为2的后方，交换后中间位置可1可0需在判断，应保证指针不自增，自增语句可写如swap函数。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E5%8F%8C%E6%8C%87%E9%92%88%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/30/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E5%8F%8C%E6%8C%87%E9%92%88%E7%AF%87/" class="post-title-link" itemprop="url">leetcode 刷题笔记 双指针篇</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-30 20:04:45" itemprop="dateCreated datePublished" datetime="2020-04-30T20:04:45+08:00">2020-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-04 11:18:20" itemprop="dateModified" datetime="2020-05-04T11:18:20+08:00">2020-05-04</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="双指针问题"><a href="#双指针问题" class="headerlink" title="双指针问题"></a>双指针问题</h2><hr>
+<p>1.167<br>ab: 双指针 避免冗余的赋值 if else 语法</p>
+<p>q&amp;f: 注意到所给为有序数组， 双指针和与目标值判断，大移动大，小移动小，注意if else语法 和 return new int [ ]{ i , j } 语法</p>
+<p>easy  </p>
+<p>2.633  </p>
+<p>ab: 剪枝优化 边界判断 Math.sqrt </p>
+<p>q&amp;f: 注意边界情况不然有错误答案，本题简单</p>
+<p>3.345</p>
+<p>ab: HashSet<character>vowels = new HashSet&lt;&gt;(Aarry.aslist(‘a’, ‘b’)) 集合的使用 ，以及 vowels.contian(i)的判断，  </p>
+<p>q&amp;f:元音如何存入hash集合，利用hash判断是不是元音，存入新数组，最后做强制类型转换 new string (result),考虑两个边界情况</p>
+<p>4.680</p>
+<p>ab: 左右两边都可以进行删除操作，一方成立即可，for循环来进行基本回文串判断操作，两边都不成立加上题目条件限制说明不是回文串，直接返回即可，内层判断可写为函数，只改变左右指针参数平移一个单位再调用函数即可，函数做基本回文串判断<br>q&amp;f:题目条件限制，基本回文串问题异同，左右均可判断，条件限制，判断完左右即得出结果，找到第一个不同点在进行while 判断即可，无异同点for循环结束即出结果，稍加注意语法</p>
+<p>5.88 归并有序数组<br>ab : 最大值比较单个比较总值每次排除一个数组的一个最大元素，边界值处理 长数组的一方值插完后怎么处理：while(n&gt;0)和 m == 0 配合 ，短的一方怎么处理： 不做处理<br>q&amp;f:双目运算符一行搞定，有序性质决定排列从最大开始，比较最大值和插入后逐个递减，减完一个数组后如何处理，<br>while (n &gt; 0 ) nums1[m+n - 1] = (m == 0|| nums1[m-1] &lt; nums2[n-1])? nums2[–n]: nums1[–m];一行解决<br>赛高！！！！</p>
+<p>6.141</p>
+<p>ab:弗洛伊德判圈,龟兔算法，快慢指针，步差之和被环的长度整除后相遇，证明有环  </p>
+<p>q&amp;f:判断边界 用Listnode 初始化两结点指针 ，while链表遍历操作注意加入边界判断，while循环中判断环</p>
+<p>reference：<a href="http://adam8157.info/blog/2015/08/why-does-tortoise-and-hare-algorithm-work/" target="_blank" rel="noopener">http://adam8157.info/blog/2015/08/why-does-tortoise-and-hare-algorithm-work/</a></p>
+<p>7.524</p>
+<p>ab:双指针判断子序列 字符串数组循环 根据条件写控制语句(短字符跳过 相等字符Longest.compareTo(target)处理) 相同过程参数改变引入函数可减少一层循环书写并返回值 返回表达式值(根据边界情况判断) </p>
+<p>q&amp;f:两层循环， 考虑过程中存值计数用来判断跳过短字符 进一步判断跳过字母顺序小的字符，抽离函数进一步判断是否为子串，子串判断条件要有两个，返回条件表达式可以覆盖解决边界问题</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/git-%E5%88%9D%E4%BD%93%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/30/git-%E5%88%9D%E4%BD%93%E9%AA%8C/" class="post-title-link" itemprop="url">git 初体验</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-30 17:02:46" itemprop="dateCreated datePublished" datetime="2020-04-30T17:02:46+08:00">2020-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-01 15:33:38" itemprop="dateModified" datetime="2020-05-01T15:33:38+08:00">2020-05-01</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>705</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="why-git"><a href="#why-git" class="headerlink" title="why git ?"></a>why git ?</h2><p>首先，代码开发过程中对代码进行回滚和备份的操作很重要，其次，代码存储设备难免存在丢失的情况，这使得我们需要对代码进行远端存储，基于git操作开发的github给我们提供了便利。最重要的原因是，代码的版本控制在团队中能够极大的提高工作效率，尤其是在大公司得以体现。  </p>
+<h2 id="git-简介"><a href="#git-简介" class="headerlink" title="git 简介"></a>git 简介</h2><p>git 是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。<br>分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。  </p>
+<h2 id="学习记录1-本地基本操作"><a href="#学习记录1-本地基本操作" class="headerlink" title="学习记录1  本地基本操作"></a>学习记录1  本地基本操作</h2><p>git 三大阶段 ：1.修改 2.暂存 3.提交</p>
+<p>熟悉了git的基本操作：  </p>
+<ul>
+<li><p>git init ： 初始化本地仓库  </p>
+</li>
+<li><p>git add : 操作文件  </p>
+</li>
+<li><p>git commit -m “内容记录” ：呈交  简单粗暴方式</p>
+</li>
+<li><p>git diff : 比较改变内容  </p>
+</li>
+<li><p>git diff –cached : 捕捉到暂存内容  </p>
+</li>
+<li><p>git status : 查看各文件追踪状态  </p>
+</li>
+<li><p>git commit + vim :比较正式的呈交  </p>
+</li>
+<li><p>git commit -a -m “内容记录” ：跳过暂存和消息输入 直接提交  </p>
+</li>
+<li><p>git log :查看版本日志  </p>
+</li>
+</ul>
+<p>其余操作 git help </p>
+<h2 id="学习记录2-远程-remote-github"><a href="#学习记录2-远程-remote-github" class="headerlink" title="学习记录2-远程-remote github"></a>学习记录2-远程-remote github</h2><p>首先，github建库，git init 本地仓库，用git提供的链接建立连接， 对文件进行git add . 和git commit 操作 后 git push ,用 git remote -v 来查看远程连接信息， 用git push origin双向保存，git tag 和 git tag -a (文件hash值：可到log中查看)对修改内容加标签。 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/spring-boot-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/29/spring-boot-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">spring boot 学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 08:10:01" itemprop="dateCreated datePublished" datetime="2020-04-29T08:10:01+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-11 21:36:04" itemprop="dateModified" datetime="2020-05-11T21:36:04+08:00">2020-05-11</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>502</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文为spring boot 应用实战开发学习笔记，目的为构建一个影院在线订票系统，使用 spring boot 结合 spring mvc 以及 Themyleaf 来提供前端网页模板内容。 </p>
+<h2 id="tech-简介"><a href="#tech-简介" class="headerlink" title="tech 简介"></a>tech 简介</h2><ul>
+<li><p>spring boot ：会话层，模板框架，数据库访问 集成框架 ；   </p>
+</li>
+<li><p>spring mvc ：设计模式 ；  </p>
+</li>
+</ul>
+<hr>
+<p>  dao层：与数据库交互，在此层实现增删改查。</p>
+<p>  service层：主要调用dao层代码，为控制层提供接口</p>
+<p>  entity层：java对象，原型，与数据库表一一对应</p>
+<p>  controller层: 主要实现post请求并与view层紧密相联</p>
+<p>  view层：提供视图显示功能  </p>
+<p>  reference: <a href="https://blog.csdn.net/huangxiaozuo/article/details/71178445" target="_blank" rel="noopener">https://blog.csdn.net/huangxiaozuo/article/details/71178445</a></p>
+<ul>
+<li><p>Thymeleaf ： 模板引擎 ；  </p>
+</li>
+<li><p>maven构建：依赖管理  ；</p>
+</li>
+<li><p>nginx负载均衡  ；</p>
+</li>
+</ul>
+<h2 id="暂时踩过的坑"><a href="#暂时踩过的坑" class="headerlink" title="暂时踩过的坑"></a>暂时踩过的坑</h2><p>1.数据库未插入导致的数组越界；</p>
+<p>2.从controller层追踪到dao层发现 jquery 查询语句失效导致空指针异常，utf-8查询中文失效造成</p>
+<p>reference:<a href="https://www.zybuluo.com/dume2007/note/670861" target="_blank" rel="noopener">https://www.zybuluo.com/dume2007/note/670861</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/%E5%BC%80%E5%90%AF%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/28/%E5%BC%80%E5%90%AF%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/" class="post-title-link" itemprop="url">开启技术博客之旅</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-28 08:25:28 / 修改时间：10:01:18" itemprop="dateCreated datePublished" datetime="2020-04-28T08:25:28+08:00">2020-04-28</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>90</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="point-out-文章观点"><a href="#point-out-文章观点" class="headerlink" title="point out 文章观点"></a>point out 文章观点</h2><p>内容</p>
+<hr>
+<h2 id="explaining-观点阐释"><a href="#explaining-观点阐释" class="headerlink" title="explaining 观点阐释"></a>explaining 观点阐释</h2><p>内容2</p>
+<hr>
+<h2 id="example-举例论证"><a href="#example-举例论证" class="headerlink" title="example    举例论证"></a>example    举例论证</h2><p>内容3</p>
+<hr>
+<h2 id="evaluation-引申-展望"><a href="#evaluation-引申-展望" class="headerlink" title="evaluation  引申 展望"></a>evaluation  引申 展望</h2><p>内容4</p>
+<hr>
+<h2 id="link-回顾主题"><a href="#link-回顾主题" class="headerlink" title="link 回顾主题"></a>link 回顾主题</h2><p>内容</p>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.github.com" target="_blank" rel="noopener">www.github.com</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sp1ke"
+      src="/images/SpongeBob.jpg">
+  <p class="site-author-name" itemprop="name">Sp1ke</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sp1ke</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"shizuku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

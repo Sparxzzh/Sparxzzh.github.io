@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1.kthElement 2151).直接排序 easy2).堆排序3).快速选择 堆概念  二叉树结构变式， 堆是计算机科学中的一种特别的树状数据结构。若是满足以下特性，即可称为堆：“给定堆中任意节点P和C，若P是C的母节点，那么P的值会小于等于C的值”。若母节点的值恒小于等于子节点的值，此堆称为最小堆；反之，若母节点的值恒大于等于子节点的值，此堆称为最大堆。在堆中最顶端的那一个节点，称作根节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode-刷题笔记-排序篇">
+<meta property="og:url" content="http://yoursite.com/2020/05/04/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E6%8E%92%E5%BA%8F%E7%AF%87/index.html">
+<meta property="og:site_name" content="Sp1ke&#39;s Blog">
+<meta property="og:description" content="1.kthElement 2151).直接排序 easy2).堆排序3).快速选择 堆概念  二叉树结构变式， 堆是计算机科学中的一种特别的树状数据结构。若是满足以下特性，即可称为堆：“给定堆中任意节点P和C，若P是C的母节点，那么P的值会小于等于C的值”。若母节点的值恒小于等于子节点的值，此堆称为最小堆；反之，若母节点的值恒大于等于子节点的值，此堆称为最大堆。在堆中最顶端的那一个节点，称作根节点">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-04T04:39:56.000Z">
+<meta property="article:modified_time" content="2020-05-25T07:39:43.507Z">
+<meta property="article:author" content="Sp1ke">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/04/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E6%8E%92%E5%BA%8F%E7%AF%87/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>leetcode-刷题笔记-排序篇 | Sp1ke's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sp1ke's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E6%8E%92%E5%BA%8F%E7%AF%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/SpongeBob.jpg">
+      <meta itemprop="name" content="Sp1ke">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sp1ke's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          leetcode-刷题笔记-排序篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-04 12:39:56" itemprop="dateCreated datePublished" datetime="2020-05-04T12:39:56+08:00">2020-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-25 15:39:43" itemprop="dateModified" datetime="2020-05-25T15:39:43+08:00">2020-05-25</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-kthElement-215"><a href="#1-kthElement-215" class="headerlink" title="1.kthElement 215"></a>1.kthElement 215</h2><h3 id="1-直接排序-easy"><a href="#1-直接排序-easy" class="headerlink" title="1).直接排序 easy"></a>1).直接排序 easy</h3><h3 id="2-堆排序"><a href="#2-堆排序" class="headerlink" title="2).堆排序"></a>2).堆排序</h3><h3 id="3-快速选择"><a href="#3-快速选择" class="headerlink" title="3).快速选择"></a>3).快速选择</h3><hr>
+<p>堆概念  二叉树结构变式， 堆是计算机科学中的一种特别的树状数据结构。若是满足以下特性，即可称为堆：“给定堆中任意节点P和C，若P是C的母节点，那么P的值会小于等于C的值”。若母节点的值恒小于等于子节点的值，此堆称为最小堆；反之，若母节点的值恒大于等于子节点的值，此堆称为最大堆。在堆中最顶端的那一个节点，称作根节点，根节点本身没有母节点。详情见 reference：  </p>
+<ul>
+<li><a href="https://www.jianshu.com/p/6b526aa481b1" target="_blank" rel="noopener">https://www.jianshu.com/p/6b526aa481b1</a>  </li>
+<li><a href="https://www.jianshu.com/p/878f93d80714" target="_blank" rel="noopener">https://www.jianshu.com/p/878f93d80714</a></li>
+</ul>
+<h4 id="1-堆排序"><a href="#1-堆排序" class="headerlink" title="1.堆排序"></a>1.堆排序</h4><hr>
+<p>ab:最大元素k 利用堆性质 维护k大小的最小堆 返回峰值极为第k个最大元素</p>
+<p>f&amp;q:优先队列堆的模板类初始化， pq.poll()保留堆性质去掉最大值, pq.peak()取峰值</p>
+<h4 id="2-快速选择"><a href="#2-快速选择" class="headerlink" title="2.快速选择"></a>2.快速选择</h4><hr>
+<p>ab:<br>1.快速选择算法，基元素选择(可随机，这里选第一项)，划分。<br>2.循环确定基元素，本题判断减少划分区间缩小范围判断k位置正确的基元素值<br>3.数组语法 nums.lengh 区别字符串的 string.length()<br>4.注意点：基元素值变化而不是位置变化，return值注意，while(true){while();while();}来筛选需要交换的位置<br>f&amp;q:利用快速选择的性质解决排序查找问题，由于其快速选择的黑盒性质(确定基元素即可，不考虑划分的排序情况)有o(n)的时间复杂度,首先k转换为正数，引入左右端点符号，用position函数获取基位置(输入划分区间端点为参数)与k判断，减小划分直到匹配到正确的基位置，position函数注意最后将选择的第一个位置基放入正确的位置（i&gt;=j时）</p>
+<h2 id="2-Topk-Frequent-Elements-347"><a href="#2-Topk-Frequent-Elements-347" class="headerlink" title="2.Topk Frequent Elements 347"></a>2.Topk Frequent Elements 347</h2><p>桶排序解决：</p>
+<p>ab:频率统计问题，寻找k元素问题（带频率性质），带键值对的排序，需要考虑元素key值（本题的频率）相同情况下的排序，map的使用以及映射赋值，桶的使用和赋值，这两种特殊数据结构的for循环遍历，存入键值对的列表桶的边界值判断和列表的子列表取值语法</p>
+<p>f&amp;q:确定为排序选择问题，而且是键值对排序选择，选用map做键值映射后再分配列表桶来进行键值对排序排序完后做倒序判断存入结果列表  </p>
+<h2 id="3-Sort-Characters-By-Frequency-415"><a href="#3-Sort-Characters-By-Frequency-415" class="headerlink" title="3. Sort Characters By Frequency 415"></a>3. Sort Characters By Frequency 415</h2><p>ab:按频率排序问题，键值对hashmap统计频率问题，字符列表类型桶排序，hashmap的快速put方法，<br>(getOrDefalult(c,0)+1)，使用了StringBuilder加append的方法动态改变字符串，最后toString转换返回结果字符串<br>f&amp;q:老套路map统计频率桶排序频率，存入各频率下的字符，最后按照频率循环append各个字符。</p>
+<h2 id="4-荷兰国旗问题-Sort-Color-75"><a href="#4-荷兰国旗问题-Sort-Color-75" class="headerlink" title="4.荷兰国旗问题 Sort Color 75"></a>4.荷兰国旗问题 Sort Color 75</h2><p>ab:分组排序，原地交换排序，三指针控制，中间指控制交换确保0全部前方2全部后方<br>f&amp;q：原地多指针分组排序主要注意指针的前进后退，这里不确定循环次数，选用while循环，边界条件为第一个判断为0要自己交换一次，所以a指针要从-1开始，而。应为判断过前面后能保证都为1交换后不用考虑1，中间指针自增即可，而对于判断为2的后方，交换后中间位置可1可0需在判断，应保证指针不自增，自增语句可写如swap函数。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/30/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-%E5%8F%8C%E6%8C%87%E9%92%88%E7%AF%87/" rel="prev" title="leetcode 刷题笔记 双指针篇">
+      <i class="fa fa-chevron-left"></i> leetcode 刷题笔记 双指针篇
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/23/Github%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" rel="next" title="Github面试准备">
+      Github面试准备 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-kthElement-215"><span class="nav-number">1.</span> <span class="nav-text">1.kthElement 215</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-直接排序-easy"><span class="nav-number">1.1.</span> <span class="nav-text">1).直接排序 easy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-堆排序"><span class="nav-number">1.2.</span> <span class="nav-text">2).堆排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-快速选择"><span class="nav-number">1.3.</span> <span class="nav-text">3).快速选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-堆排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.堆排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-快速选择"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.快速选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Topk-Frequent-Elements-347"><span class="nav-number">2.</span> <span class="nav-text">2.Topk Frequent Elements 347</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Sort-Characters-By-Frequency-415"><span class="nav-number">3.</span> <span class="nav-text">3. Sort Characters By Frequency 415</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-荷兰国旗问题-Sort-Color-75"><span class="nav-number">4.</span> <span class="nav-text">4.荷兰国旗问题 Sort Color 75</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sp1ke"
+      src="/images/SpongeBob.jpg">
+  <p class="site-author-name" itemprop="name">Sp1ke</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sp1ke</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"shizuku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
